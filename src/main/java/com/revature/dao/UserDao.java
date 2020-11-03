@@ -1,5 +1,9 @@
 package com.revature.dao;
 
-public class UserDao {
+import com.revature.model.User;
+
+public interface UserDao {
+
+	User login(String username, String password);
 
 }
