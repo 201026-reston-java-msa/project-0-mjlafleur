@@ -13,7 +13,7 @@ user_id SERIAL PRIMARY KEY
 , pass_word VARCHAR(50) NOT NULL
 , first_name VARCHAR(50) NOT NULL
 , last_name VARCHAR(50) NOT NULL
-, email VARCHAR(50) NOT NULL UNIQUE
+, rolenum INTEGER NOT NULL
 );
 
 CREATE TABLE AccountInformation(
@@ -48,10 +48,10 @@ type_id SERIAL PRIMARY KEY
 
 --------------------------INSERTS-----------------
 
-INSERT INTO userinformation (user_name,pass_word,first_name,last_name,email) 
-	VALUES ('user','pass','first','last','firstlast@email.com');
-INSERT INTO userinformation (user_name,pass_word,first_name,last_name,email) 
-	VALUES ('user2','pass2','first2','last2','firstlast@email2.com');
+INSERT INTO userinformation (user_name,pass_word,first_name,last_name,rolenum) 
+	VALUES ('user','pass','first','last',1);
+INSERT INTO userinformation (user_name,pass_word,first_name,last_name,rolenum) 
+	VALUES ('user2','pass2','first2','last2',2);
 INSERT INTO accountinformation (account_balance,account_type,account_status) 
 	VALUES (0,'Checking','OPEN');
 INSERT INTO accountinformation (account_balance,account_type,account_status) 
@@ -74,8 +74,11 @@ INSERT INTO AccountType (Type_name) VALUES ('Checking');
 INSERT INTO AccountType (Type_name) VALUES ('Savings');
 INSERT INTO accountType (Type_name) VALUES ('Pending');
 
+INSERT INTO userinformation (user_name,pass_word,first_name,last_name,rolenum)
+ VALUES ('m','l','n','m',1);
 ---------------------JOIN------------
-SELECT A.user_name, A.first_name, A.last_name, A.email, C.account_type, C.account_status 
+
+SELECT A.user_name, A.first_name, A.last_name, A.rolenum, C.account_type, C.account_status 
 FROM UserInformation A 
 INNER JOIN user_account_junction B 
 ON A.user_id  = B.user_fk 
@@ -83,7 +86,7 @@ INNER JOIN AccountInformation C
 ON C.account_id  = B.account_fk 
 ORDER BY user_id
 
-SELECT A.user_name, A.first_name, A.last_name, A.email, C.account_id, C.account_type, C.account_status 
+SELECT A.user_name, A.first_name, A.last_name, C.account_id, C.account_type, C.account_status 
 FROM UserInformation A   
 INNER JOIN user_account_junction B  
 ON A.user_id  = B.user_fk  
@@ -103,8 +106,7 @@ SELECT user_id FROM userinformation WHERE user_name = 'ASeaholm';
 
 SELECT max(user_id) FROM userinformation;
 SELECT max(account_id) FROM accountinformation;
-INSERT INTO userinformation (user_name,pass_word,first_name,last_name,email)
- VALUES ('m','l','n','m','nm@email.com');
+
 
 -------------------DELETES------------------
 DELETE FROM user_account_junction WHERE user_fk = 3;
@@ -119,3 +121,25 @@ SELECT * FROM roles;
 SELECT * FROM AccountStatus;
 SELECT * FROM AccountType;
 
+
+--we use create or replace to denote
+--that we may want to rerun this script multiple times
+CREATE OR REPLACE FUNCTION get_current_time() RETURNS 
+	TIME WITH TIME ZONE 
+AS 
+$$
+	-- current_time is a built in value, which is just the current time
+	-- we do not need to return statement since teh function
+	-- will just return the last statement's result by default
+	SELECT CURRENT_TIME;
+$$ LANGUAGE SQL;
+
+SELECT get_current_time();
+
+CREATE OR REPLACE FUNCTION get_string_literal() RETURNS VARCHAR(40)
+AS 
+$func$
+	SELECT 'Hello World!';
+$func$ LANGUAGE SQL;
+
+SELECT get_String_literal();

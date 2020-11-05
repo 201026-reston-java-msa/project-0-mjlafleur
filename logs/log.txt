@@ -1,0 +1,4 @@
+2020-11-04 17:19:05 WARN  UserDaoImpl:107 - That username is unavailable.
+ionPattern=2020-11-04 17:19:05 WARN  UserDaoImpl:107 - That username is unavailable.
+2020-11-04 17:25:42 WARN  UserDaoImpl:108 - That username is unavailable.
+ionPattern=2020-11-04 17:25:42 WARN  UserDaoImpl:108 - That username is unavailable.
