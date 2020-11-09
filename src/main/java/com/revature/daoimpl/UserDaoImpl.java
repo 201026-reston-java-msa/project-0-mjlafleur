@@ -36,7 +36,6 @@ public class UserDaoImpl implements UserDao{
 			ps.setString(1,userName);
 			ps.setString(2, passWord);
 			
-			
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				targetUser = new User(rs.getInt("user_id"),rs.getString("user_name"),""/*this is the password*/, 
@@ -65,10 +64,9 @@ public class UserDaoImpl implements UserDao{
 			try (Connection conn = ConnectionUtil.getConnection()) {
 				
 //check if duplicate account
-				String check = "SELECT * FROM UserInformation WHERE user_name = ? AND pass_word =?";
+				String check = "SELECT * FROM UserInformation WHERE user_name = ?";
 				PreparedStatement p = conn.prepareStatement(check);
 				p.setString(1,userName);
-				p.setString(2, passWord);
 				
 				ResultSet rs = p.executeQuery();
 				if (!rs.next()) {

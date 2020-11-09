@@ -4,6 +4,7 @@ public class Account {
 	private int id;
 	private String type;
 	private double balance;
+	private String status;
 	
 	public Account() {
 	}
@@ -12,6 +13,13 @@ public class Account {
 		this.id = id;
 		this.type = type;
 		this.balance = balance;
+	}
+
+	public Account(int id, String type, double balance, String status) {
+		this.id = id;
+		this.type = type;
+		this.balance = balance;
+		this.status = status;
 	}
 
 	public int getId() {
@@ -40,7 +48,15 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", type=" + type + ", balance=" + balance + "]";
+		return this.type+ " Account: "+this.id+" | Balance: $" + this.balance + " | Status: " + this.status;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	

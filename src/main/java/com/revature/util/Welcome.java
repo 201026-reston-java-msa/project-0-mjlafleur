@@ -6,11 +6,8 @@ import com.revature.controller.UserController;
 
 public class Welcome {
 	
-	public Welcome() {
-	}
-	
 	public static void welcome() {
-		Scanner scan = new Scanner(System.in);
+		Scanner mainInput = new Scanner(System.in);
 		String userInput;
 		System.out.println("Welcome to BrutalBank!");
 		while(true) {
@@ -19,7 +16,7 @@ public class Welcome {
 					+ "\n2 - Register"
 					+ "\nQ - Quit"
 					+ "\n");
-		userInput = scan.nextLine().toLowerCase();
+				userInput = mainInput.next();
 			if(userInput.equalsIgnoreCase("1")|| userInput.equalsIgnoreCase("login")) {
 				
 					UserController.login();
@@ -28,16 +25,18 @@ public class Welcome {
 				System.out.println("Let's Register Your Account!");
 				
 					UserController.register();
-				
+					
 			} else if (userInput.equalsIgnoreCase("Q")|| userInput.equalsIgnoreCase("quit")) {
+				
 				System.out.println("Goodbye!");
 				break;
-			}else {
-				System.out.println("Invalid option please try again.");
-				
 			}
 		}
-		scan.close();
+		mainInput.close();
 	}
+
+
+
+
 
 }

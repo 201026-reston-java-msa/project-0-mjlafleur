@@ -2,3 +2,233 @@
 ionPattern=2020-11-04 17:19:05 WARN  UserDaoImpl:107 - That username is unavailable.
 2020-11-04 17:25:42 WARN  UserDaoImpl:108 - That username is unavailable.
 ionPattern=2020-11-04 17:25:42 WARN  UserDaoImpl:108 - That username is unavailable.
+2020-11-05 11:12:52 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 11:12:52 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 11:13:40 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 11:13:40 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 11:38:02 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 11:38:02 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 11:38:02 WARN  UserController:37 - Failed login attempt
+ionPattern=2020-11-05 11:38:02 WARN  UserController:37 - Failed login attempt
+2020-11-05 12:09:51 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:09:51 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:09:51 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:09:51 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:09:56 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:09:56 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:09:56 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:09:56 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:12:15 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:12:15 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:12:15 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:12:15 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:12:19 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:12:19 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:12:19 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:12:19 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:12:25 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:12:25 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:12:25 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:12:25 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:12:31 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:12:31 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:12:31 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:12:31 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:14:12 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:14:12 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:14:12 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:14:12 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:14:21 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:14:21 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:14:21 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:14:21 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:16:03 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:16:03 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:16:03 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:16:03 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:16:05 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:16:05 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:16:05 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:16:05 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:16:52 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:16:52 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:16:52 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:16:52 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:16:54 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:16:54 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:16:54 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:16:54 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:18:49 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:18:49 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:18:49 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:18:49 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:18:53 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:18:53 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:18:53 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:18:53 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:22:03 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:22:03 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:22:03 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:22:03 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:22:06 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:22:06 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:22:06 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:22:06 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:23:58 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:23:58 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:23:58 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:23:58 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:24:00 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:24:00 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:24:00 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:24:00 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:24:07 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:24:07 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:24:07 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:24:07 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:24:11 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:24:11 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:24:11 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:24:11 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:25:02 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:25:02 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:25:02 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:25:02 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:25:04 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:25:04 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:25:04 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:25:04 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:27:01 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:27:01 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:27:01 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:27:01 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:27:03 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:27:03 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:27:03 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:27:03 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:31:47 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:31:47 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:31:47 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:31:47 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:31:49 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:31:49 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:31:49 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:31:49 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:34:35 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:34:35 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:34:35 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:34:35 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:34:36 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:34:36 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:34:36 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:34:36 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:38:56 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:38:56 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:38:56 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:38:56 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:38:58 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:38:58 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:38:58 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:38:58 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:43:52 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:43:52 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:43:52 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:43:52 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:43:53 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:43:53 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:43:53 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:43:53 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:44:47 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:44:47 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:44:47 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:44:47 WARN  UserController:39 - Failed login attempt
+2020-11-05 12:44:51 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 12:44:51 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 12:44:51 WARN  UserController:39 - Failed login attempt
+ionPattern=2020-11-05 12:44:51 WARN  UserController:39 - Failed login attempt
+2020-11-05 14:13:01 WARN  UserDaoImpl:108 - That username is unavailable.
+ionPattern=2020-11-05 14:13:01 WARN  UserDaoImpl:108 - That username is unavailable.
+2020-11-05 14:17:16 WARN  UserDaoImpl:108 - That username is unavailable.
+ionPattern=2020-11-05 14:17:16 WARN  UserDaoImpl:108 - That username is unavailable.
+2020-11-05 14:36:37 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 14:36:37 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 14:36:37 WARN  UserController:43 - Failed login attempt
+ionPattern=2020-11-05 14:36:37 WARN  UserController:43 - Failed login attempt
+2020-11-05 14:36:39 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 14:36:39 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 14:36:39 WARN  UserController:43 - Failed login attempt
+ionPattern=2020-11-05 14:36:39 WARN  UserController:43 - Failed login attempt
+2020-11-05 14:36:55 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-05 14:36:55 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-05 14:36:55 WARN  UserController:43 - Failed login attempt
+ionPattern=2020-11-05 14:36:55 WARN  UserController:43 - Failed login attempt
+2020-11-06 09:23:50 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 09:23:50 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 09:23:50 WARN  UserController:43 - Failed login attempt
+ionPattern=2020-11-06 09:23:50 WARN  UserController:43 - Failed login attempt
+2020-11-06 09:23:52 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 09:23:52 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 09:23:52 WARN  UserController:43 - Failed login attempt
+ionPattern=2020-11-06 09:23:52 WARN  UserController:43 - Failed login attempt
+2020-11-06 09:30:47 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 09:30:47 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 09:30:47 WARN  UserController:43 - Failed login attempt
+ionPattern=2020-11-06 09:30:47 WARN  UserController:43 - Failed login attempt
+2020-11-06 09:30:49 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 09:30:49 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 09:30:49 WARN  UserController:43 - Failed login attempt
+ionPattern=2020-11-06 09:30:49 WARN  UserController:43 - Failed login attempt
+2020-11-06 09:41:15 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 09:41:15 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 09:41:15 WARN  UserController:45 - Failed login attempt
+ionPattern=2020-11-06 09:41:15 WARN  UserController:45 - Failed login attempt
+2020-11-06 09:41:17 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 09:41:17 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 09:41:17 WARN  UserController:45 - Failed login attempt
+ionPattern=2020-11-06 09:41:17 WARN  UserController:45 - Failed login attempt
+2020-11-06 09:42:31 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 09:42:31 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 09:42:31 WARN  UserController:45 - Failed login attempt
+ionPattern=2020-11-06 09:42:31 WARN  UserController:45 - Failed login attempt
+2020-11-06 09:42:32 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 09:42:32 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 09:42:32 WARN  UserController:45 - Failed login attempt
+ionPattern=2020-11-06 09:42:32 WARN  UserController:45 - Failed login attempt
+2020-11-06 09:44:57 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 09:44:57 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 09:44:57 WARN  UserController:45 - Failed login attempt
+ionPattern=2020-11-06 09:44:57 WARN  UserController:45 - Failed login attempt
+2020-11-06 09:48:51 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 09:48:51 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 09:48:51 WARN  UserController:45 - Failed login attempt
+ionPattern=2020-11-06 09:48:51 WARN  UserController:45 - Failed login attempt
+2020-11-06 10:03:30 WARN  UserDaoImpl:108 - That username is unavailable.
+ionPattern=2020-11-06 10:03:30 WARN  UserDaoImpl:108 - That username is unavailable.
+2020-11-06 10:12:06 WARN  UserDaoImpl:107 - That username is unavailable.
+ionPattern=2020-11-06 10:12:06 WARN  UserDaoImpl:107 - That username is unavailable.
+2020-11-06 10:12:10 WARN  UserDaoImpl:107 - That username is unavailable.
+ionPattern=2020-11-06 10:12:10 WARN  UserDaoImpl:107 - That username is unavailable.
+2020-11-06 10:12:42 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 10:12:42 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 10:12:42 WARN  UserController:44 - Failed login attempt
+ionPattern=2020-11-06 10:12:42 WARN  UserController:44 - Failed login attempt
+2020-11-06 10:13:08 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 10:13:08 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 10:13:08 WARN  UserController:44 - Failed login attempt
+ionPattern=2020-11-06 10:13:08 WARN  UserController:44 - Failed login attempt
+2020-11-06 10:16:09 WARN  UserDaoImpl:107 - That username is unavailable.
+ionPattern=2020-11-06 10:16:09 WARN  UserDaoImpl:107 - That username is unavailable.
+2020-11-06 10:20:39 WARN  UserDaoImpl:107 - That username is unavailable.
+ionPattern=2020-11-06 10:20:39 WARN  UserDaoImpl:107 - That username is unavailable.
+2020-11-06 10:21:04 WARN  UserDaoImpl:107 - That username is unavailable.
+ionPattern=2020-11-06 10:21:04 WARN  UserDaoImpl:107 - That username is unavailable.
+2020-11-06 10:21:14 WARN  UserDaoImpl:107 - That username is unavailable.
+ionPattern=2020-11-06 10:21:14 WARN  UserDaoImpl:107 - That username is unavailable.
+2020-11-06 13:13:50 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 13:13:50 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 13:13:50 WARN  UserController:45 - Failed login attempt
+ionPattern=2020-11-06 13:13:50 WARN  UserController:45 - Failed login attempt
+2020-11-06 13:58:48 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-06 13:58:48 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-06 13:58:48 WARN  UserController:45 - Failed login attempt
+ionPattern=2020-11-06 13:58:48 WARN  UserController:45 - Failed login attempt

@@ -6,6 +6,21 @@ DROP TABLE accountstatus;
 DROP TABLE AccountType;
 
 -----------------TABLE CREATION----------------
+CREATE TABLE roles(
+role_id SERIAL PRIMARY KEY
+, role_name VARCHAR(10)
+);
+
+CREATE TABLE AccountStatus(
+status_id SERIAL PRIMARY KEY
+, status_name VARCHAR(10)
+);
+
+CREATE TABLE AccountType(
+type_id SERIAL PRIMARY KEY
+, type_name VARCHAR(10)
+);
+
 
 CREATE TABLE UserInformation(
 user_id SERIAL PRIMARY KEY
@@ -14,6 +29,7 @@ user_id SERIAL PRIMARY KEY
 , first_name VARCHAR(50) NOT NULL
 , last_name VARCHAR(50) NOT NULL
 , rolenum INTEGER NOT NULL
+,FOREIGN KEY (rolenum) REFERENCES roles(role_id)
 );
 
 CREATE TABLE AccountInformation(
@@ -31,34 +47,9 @@ user_fk INTEGER NOT NULL
 , FOREIGN KEY (account_fk) REFERENCES AccountInformation (account_id)
 );
 
-CREATE TABLE roles(
-role_id SERIAL PRIMARY KEY
-, role_name VARCHAR(10)
-);
 
-CREATE TABLE AccountStatus(
-status_id SERIAL PRIMARY KEY
-, status_name VARCHAR(10)
-);
-
-CREATE TABLE AccountType(
-type_id SERIAL PRIMARY KEY
-, type_name VARCHAR(10)
-);
 
 --------------------------INSERTS-----------------
-
-INSERT INTO userinformation (user_name,pass_word,first_name,last_name,rolenum) 
-	VALUES ('user','pass','first','last',1);
-INSERT INTO userinformation (user_name,pass_word,first_name,last_name,rolenum) 
-	VALUES ('user2','pass2','first2','last2',2);
-INSERT INTO accountinformation (account_balance,account_type,account_status) 
-	VALUES (0,'Checking','OPEN');
-INSERT INTO accountinformation (account_balance,account_type,account_status) 
-	VALUES (2,'Checking','OPEN');
-INSERT INTO user_account_junction VALUES (1,1);
-INSERT INTO user_account_junction VALUES (2,2);
-
 
 INSERT INTO roles (role_name) VALUES ('Admin');
 INSERT INTO roles (role_name) VALUES ('Employee');
@@ -74,11 +65,25 @@ INSERT INTO AccountType (Type_name) VALUES ('Checking');
 INSERT INTO AccountType (Type_name) VALUES ('Savings');
 INSERT INTO accountType (Type_name) VALUES ('Pending');
 
+
+INSERT INTO userinformation (user_name,pass_word,first_name,last_name,rolenum) 
+	VALUES ('user','pass','first','last',1);
+INSERT INTO userinformation (user_name,pass_word,first_name,last_name,rolenum) 
+	VALUES ('user2','pass2','first2','last2',2);
+INSERT INTO accountinformation (account_balance,account_type,account_status) 
+	VALUES (0,'Checking','OPEN');
+INSERT INTO accountinformation (account_balance,account_type,account_status) 
+	VALUES (2,'Checking','OPEN');
+INSERT INTO user_account_junction VALUES (1,1);
+INSERT INTO user_account_junction VALUES (2,2);
+
+
+
 INSERT INTO userinformation (user_name,pass_word,first_name,last_name,rolenum)
  VALUES ('m','l','n','m',1);
 ---------------------JOIN------------
 
-SELECT A.user_name, A.first_name, A.last_name, A.rolenum, C.account_type, C.account_status 
+SELECT A.user_name, A.first_name, A.last_name, A.rolenum, C.account_id, C.account_balance, C.account_type, C.account_status 
 FROM UserInformation A 
 INNER JOIN user_account_junction B 
 ON A.user_id  = B.user_fk 
@@ -86,13 +91,29 @@ INNER JOIN AccountInformation C
 ON C.account_id  = B.account_fk 
 ORDER BY user_id
 
+SELECT C.account_id, C.account_balance, C.account_type, C.account_status 
+FROM UserInformation A 
+INNER JOIN user_account_junction B 
+ON A.user_id  = B.user_fk 
+INNER JOIN AccountInformation C 
+ON C.account_id  = B.account_fk
+
+
 SELECT A.user_name, A.first_name, A.last_name, C.account_id, C.account_type, C.account_status 
 FROM UserInformation A   
 INNER JOIN user_account_junction B  
 ON A.user_id  = B.user_fk  
 INNER JOIN AccountInformation C  
 ON C.account_id  = B.account_fk
-WHERE C.account_id=1;
+WHERE A.user_id =1;
+
+SELECT C.account_id, C.account_balance, C.account_type, C.account_status
+FROM UserInformation A  
+INNER JOIN user_account_junction B 
+ON A.user_id  = B.user_fk  
+INNER JOIN AccountInformation C 
+ON C.account_id  = B.account_fk
+WHERE A.user_id=7
 
 
 

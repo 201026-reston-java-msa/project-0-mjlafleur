@@ -1,6 +1,5 @@
 package com.revature;
 
-import java.util.Scanner;
 
 import com.revature.util.Welcome;
 
@@ -11,7 +10,9 @@ public class Driver {
 	 * You may immediately delete this file from your project, you will not require it. 
 	 */
 	public static void main(String[] args) {
+
 		Welcome.welcome();
+		
 
 	}
 
