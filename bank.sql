@@ -49,6 +49,7 @@ user_fk INTEGER NOT NULL
 
 
 
+
 --------------------------INSERTS-----------------
 
 INSERT INTO roles (role_name) VALUES ('Admin');
@@ -78,9 +79,8 @@ INSERT INTO user_account_junction VALUES (1,1);
 INSERT INTO user_account_junction VALUES (2,2);
 
 
-
-INSERT INTO userinformation (user_name,pass_word,first_name,last_name,rolenum)
- VALUES ('m','l','n','m',1);
+--INSERT INTO accountinformation (userid) INTEGER NOT NULL 
+--FOREIGN KEY (userid) REFERENCES UserInformation (user_id);
 ---------------------JOIN------------
 
 SELECT A.user_name, A.first_name, A.last_name, A.rolenum, C.account_id, C.account_balance, C.account_type, C.account_status 
@@ -105,7 +105,7 @@ INNER JOIN user_account_junction B
 ON A.user_id  = B.user_fk  
 INNER JOIN AccountInformation C  
 ON C.account_id  = B.account_fk
-WHERE A.user_id =1;
+WHERE A.user_id =7;
 
 SELECT C.account_id, C.account_balance, C.account_type, C.account_status
 FROM UserInformation A  
@@ -115,8 +115,11 @@ INNER JOIN AccountInformation C
 ON C.account_id  = B.account_fk
 WHERE A.user_id=7
 
+
+
 ---------------------UPDATES------------------
 --DEPOSIT
+	UPDATE accountinformation SET account_balance = ? WHERE account_id = ?;
 	
 
 --WITHDRAW
@@ -124,6 +127,13 @@ WHERE A.user_id=7
 
 --TRANSFER
 
+UPDATE accountinformation
+	SET account_balance =   
+	CASE  account_id 
+	WHEN 7 THEN 121
+	WHEN 8 THEN 35
+	END 
+	WHERE account_id IN (7,8);
 
 
 ----------------------QUERIES----------------
@@ -143,7 +153,7 @@ DELETE FROM user_account_junction WHERE user_fk = 3;
 DELETE FROM userinformation WHERE user_id = 3;
 DELETE FROM accountinformation WHERE account_id = 3;
 
-
+-------------------SELECTS-------------------
 SELECT * FROM UserInformation;
 SELECT * FROM AccountInformation;
 SELECT * FROM user_account_junction;

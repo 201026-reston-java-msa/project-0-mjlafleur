@@ -53,10 +53,13 @@ public class AccountController {
 		}
 		System.out.println("Accounts Pending Employee Approval. Please, Login to Check Status.");
 	}
-
-	public static void validateAccounts() {
+	
+	private static void closeAccount(User targetUser) {
+		// TODO Auto-generated method stub
 		
 	}
+
+	
 
 	public static void accountUser(User targetUser) {
 		//gets account info
@@ -80,17 +83,23 @@ public class AccountController {
 			} else if (menu.equalsIgnoreCase("2")) {
 				accountServ.withdraw(targetAccounts);
 			} else if (menu.equalsIgnoreCase("3")) {
-				accountServ.transfer(targetAccounts);
+				if (targetAccounts.size()>1)
+				targetAccounts = accountServ.transfer(targetAccounts,targetUser.getId());
+				else System.out.println("Please open another Account.");
 			} else if (menu.equalsIgnoreCase("4")) {
-				accountServ.closeAccount(targetAccounts);
+				openAccount(targetUser);
 			} else if (menu.equalsIgnoreCase("5")) {
-				accountServ.closeAccount(targetAccounts);
+				closeAccount(targetUser);
 			}else if (menu.equalsIgnoreCase("q")) {
 				break;
 			}
-		}
-				
+		}		
+	}
+
+	
+	public static void validateAccounts() {
 		
 	}
+	
 
 }

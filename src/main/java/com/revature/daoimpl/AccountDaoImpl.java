@@ -80,7 +80,6 @@ public class AccountDaoImpl implements AccountDao{
 			}
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -91,8 +90,8 @@ public class AccountDaoImpl implements AccountDao{
 	public Account deposit(int accountID, Double newBalance) {
 		Account updatedAccount = new Account();
 		
-		String deposit = "UPDATE accountinformation SET account_balance = ? WHERE account_id = ?;";
 		try(Connection conn = ConnectionUtil.getConnection()) {
+			String deposit = "UPDATE accountinformation SET account_balance = ? WHERE account_id = ?;";
 			PreparedStatement postDeposit = conn.prepareStatement(deposit);
 			postDeposit.setDouble(1, newBalance);
 			postDeposit.setInt(2,accountID);
@@ -121,8 +120,8 @@ public class AccountDaoImpl implements AccountDao{
 	public Account withdraw(int accountID, Double newBalance) {
 Account updatedAccount = new Account();
 		
-		String withdraw = "UPDATE accountinformation SET account_balance = ? WHERE account_id = ?;";
 		try(Connection conn = ConnectionUtil.getConnection()) {
+			String withdraw = "UPDATE accountinformation SET account_balance = ? WHERE account_id = ?;";
 			PreparedStatement postWithdraw = conn.prepareStatement(withdraw);
 			postWithdraw.setDouble(1, newBalance);
 			postWithdraw.setInt(2,accountID);
@@ -146,6 +145,56 @@ Account updatedAccount = new Account();
 		
 		
 		return updatedAccount;
+	}
+	@Override
+	public List<Account> transfer(int accountWithdrawID, Double newWithdrawBalance, int accountDepositID,
+			Double newDepositBalance,int userId) {
+		List<Account> targetAccounts = new ArrayList<Account>();
+		Account updatedAccount; 
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String transfer = "UPDATE accountinformation\r\n" + 
+					"	SET account_balance =   \r\n" + 
+					"	CASE  account_id \r\n" + 
+					"	WHEN ? THEN ?\r\n" + 
+					"	WHEN ? THEN ?\r\n" + 
+					"	END \r\n" + 
+					"	WHERE account_id IN (?,?);";
+			PreparedStatement postTransfer = conn.prepareStatement(transfer);
+			postTransfer.setInt(1,accountWithdrawID);
+			postTransfer.setDouble(2, newWithdrawBalance);
+			postTransfer.setInt(3,accountDepositID);
+			postTransfer.setDouble(4, newDepositBalance);
+			postTransfer.setInt(5,accountWithdrawID);
+			postTransfer.setInt(6,accountDepositID);
+			postTransfer.executeUpdate();
+			
+			
+			String balance = "SELECT C.account_id, C.account_balance, C.account_type, C.account_status\r\n" + 
+					"FROM UserInformation A  \r\n" + 
+					"INNER JOIN user_account_junction B \r\n" + 
+					"ON A.user_id  = B.user_fk  \r\n" + 
+					"INNER JOIN AccountInformation C \r\n" + 
+					"ON C.account_id  = B.account_fk\r\n" + 
+					"WHERE A.user_id=?";
+			PreparedStatement getBalance = conn.prepareStatement(balance);
+			getBalance.setInt(1, userId);
+			
+			ResultSet setBalance = getBalance.executeQuery();
+			while(setBalance.next()) {
+				updatedAccount = new Account(setBalance.getInt("account_id"),setBalance.getString("account_type"),setBalance.getDouble("account_balance")
+						,setBalance.getString("account_status"));
+				targetAccounts.add(updatedAccount);
+				
+				
+			}
+			
+		} catch (SQLException e) {
+			log.warn("An error with the database has occured.");
+			e.printStackTrace();
+		}
+		
+		return targetAccounts;
 	}
 
 }

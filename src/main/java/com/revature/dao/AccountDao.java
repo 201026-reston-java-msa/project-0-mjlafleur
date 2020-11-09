@@ -14,5 +14,7 @@ public interface AccountDao {
 
 	Account withdraw(int accountID, Double newBalance);
 
+	List<Account> transfer(int accountWithdrawID, Double newWithdrawBalance, int accountDepositID, Double newDepositBalance, int userId);
+
 
 }
