@@ -12,5 +12,7 @@ public interface AccountDao {
 
 	Account deposit(int accountID, Double newBalance);
 
+	Account withdraw(int accountID, Double newBalance);
+
 
 }

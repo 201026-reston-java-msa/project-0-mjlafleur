@@ -117,5 +117,35 @@ public class AccountDaoImpl implements AccountDao{
 		
 		return updatedAccount;
 	}
+	@Override
+	public Account withdraw(int accountID, Double newBalance) {
+Account updatedAccount = new Account();
+		
+		String withdraw = "UPDATE accountinformation SET account_balance = ? WHERE account_id = ?;";
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			PreparedStatement postWithdraw = conn.prepareStatement(withdraw);
+			postWithdraw.setDouble(1, newBalance);
+			postWithdraw.setInt(2,accountID);
+			postWithdraw.executeUpdate();
+			
+			String balance = "SELECT * FROM accountinformation WHERE account_id = ?";
+			PreparedStatement getBalance = conn.prepareStatement(balance);
+			getBalance.setInt(1, accountID);
+			
+			ResultSet setBalance = getBalance.executeQuery();
+			while(setBalance.next()) {
+				updatedAccount = new Account(setBalance.getInt("account_id"),setBalance.getString("account_type"),setBalance.getDouble("account_balance")
+						,setBalance.getString("account_status"));
+				
+			}
+			
+		} catch (SQLException e) {
+			log.warn("An error with the database has occured.");
+			e.printStackTrace();
+		}
+		
+		
+		return updatedAccount;
+	}
 
 }

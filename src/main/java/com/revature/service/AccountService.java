@@ -87,7 +87,7 @@ public class AccountService {
 		return targetAccounts;
 	}
 
-	public void withdraw(List<Account> targetAccounts) {
+	public List<Account> withdraw(List<Account> targetAccounts) {
 		Scanner with = new Scanner(System.in);
 
 		int index = -1;
@@ -120,14 +120,22 @@ public class AccountService {
 			} 
 				// get amount to withdraw
 			Account updatedAccount;
+			withdrawAmount:
 			while(true) {
 				System.out.println("How much would you like to withdraw?");
 				String amount = with.nextLine();
 					if(Double.valueOf(amount)>0) {
-						Double newBalance = targetAccounts.get(index).getBalance() + Double.valueOf(amount);
-						updatedAccount = accountDao.deposit(accountID, newBalance);						
+						if(Double.valueOf(amount)>= targetAccounts.get(index).getBalance()) {
+							System.out.println("Overdraft Protection");
+							log.warn("withdraw was greater than balance.");
+							continue withdrawAmount;
+						} 
+					
+						Double newBalance = targetAccounts.get(index).getBalance() - Double.valueOf(amount);
+						updatedAccount = accountDao.withdraw(accountID, newBalance);						
 						break;
-					} else {
+						} 
+					else {
 						log.warn("System input was not numeric or it was not gerater than 0.");
 						System.out.println("the amount entered was not more than $0.00");
 					}
