@@ -232,3 +232,9 @@ ionPattern=2020-11-06 13:13:50 WARN  UserController:45 - Failed login attempt
 ionPattern=2020-11-06 13:58:48 WARN  UserDaoImpl:46 - Invalid Credentials
 2020-11-06 13:58:48 WARN  UserController:45 - Failed login attempt
 ionPattern=2020-11-06 13:58:48 WARN  UserController:45 - Failed login attempt
+2020-11-09 10:28:08 WARN  AccountDaoImpl:108 - An error with the database has occured.
+ionPattern=2020-11-09 10:28:08 WARN  AccountDaoImpl:108 - An error with the database has occured.
+2020-11-09 10:32:25 WARN  AccountDaoImpl:108 - An error with the database has occured.
+ionPattern=2020-11-09 10:32:25 WARN  AccountDaoImpl:108 - An error with the database has occured.
+2020-11-09 10:43:34 WARN  AccountDaoImpl:113 - An error with the database has occured.
+ionPattern=2020-11-09 10:43:34 WARN  AccountDaoImpl:113 - An error with the database has occured.

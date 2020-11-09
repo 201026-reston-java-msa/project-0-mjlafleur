@@ -115,6 +115,15 @@ INNER JOIN AccountInformation C
 ON C.account_id  = B.account_fk
 WHERE A.user_id=7
 
+---------------------UPDATES------------------
+--DEPOSIT
+	
+
+--WITHDRAW
+
+
+--TRANSFER
+
 
 
 ----------------------QUERIES----------------

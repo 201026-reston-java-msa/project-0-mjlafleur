@@ -10,7 +10,7 @@ public interface AccountDao {
 	
 	List<Account> getAccount(int id);
 
-	Account deposit(String choice, String amount);
+	Account deposit(int accountID, Double newBalance);
 
 
 }

@@ -88,16 +88,29 @@ public class AccountDaoImpl implements AccountDao{
 		return targetAccounts;
 	}
 	@Override
-	public Account deposit(String choice, String amount) {
-		Double depo = Double.valueOf(amount);
+	public Account deposit(int accountID, Double newBalance) {
 		Account updatedAccount = new Account();
 		
-		String deposit = "";
+		String deposit = "UPDATE accountinformation SET account_balance = ? WHERE account_id = ?;";
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			PreparedStatement postDeposit = conn.prepareStatement(deposit);
-			postDeposit.setDouble(1, depo);
+			postDeposit.setDouble(1, newBalance);
+			postDeposit.setInt(2,accountID);
+			postDeposit.executeUpdate();
+			
+			String balance = "SELECT * FROM accountinformation WHERE account_id = ?";
+			PreparedStatement getBalance = conn.prepareStatement(balance);
+			getBalance.setInt(1, accountID);
+			
+			ResultSet setBalance = getBalance.executeQuery();
+			while(setBalance.next()) {
+				updatedAccount = new Account(setBalance.getInt("account_id"),setBalance.getString("account_type"),setBalance.getDouble("account_balance")
+						,setBalance.getString("account_status"));
+				
+			}
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			log.warn("An error with the database has occured.");
 			e.printStackTrace();
 		}
 		
