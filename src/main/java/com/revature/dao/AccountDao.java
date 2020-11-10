@@ -16,5 +16,9 @@ public interface AccountDao {
 
 	List<Account> transfer(int accountWithdrawID, Double newWithdrawBalance, int accountDepositID, Double newDepositBalance, int userId);
 
+	void pendingAccounts();
+
+	String specificPendingAccounts(int iD);
+
 
 }

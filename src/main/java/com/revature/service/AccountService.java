@@ -159,12 +159,10 @@ public class AccountService {
 	public List<Account> transfer(List<Account> targetAccounts, int userId) {
 		Scanner tran = new Scanner(System.in);
 
-		
-		
 		withdrawAccount:
 		// account to transfer from
 		while (true) {
-			String choice ="";
+			String choice = "";
 			int withdrawIndex = -1;
 			int accountWithdrawID = -1;
 			double withdrawAmount = -1;
@@ -178,76 +176,102 @@ public class AccountService {
 				Integer i = a.getId();
 				String j = i.toString();
 				if (j.equalsIgnoreCase(withdrawChoice)) {
-					choice=withdrawChoice;
+					choice = withdrawChoice;
 					accountWithdrawID = Integer.valueOf(withdrawChoice);
 					withdrawIndex = targetAccounts.indexOf(a);
 					break;
 				}
 			}
 			// amount to transfer
-		Account updatedAccount;
-		Double newWithdrawBalance;
-		withdrawAmount: while (true) {
-			System.out.println("How much would you like to withdraw?");
-			String amount = tran.nextLine();
-			if (Double.valueOf(amount) > 0) {
-				if (Double.valueOf(amount) >= targetAccounts.get(withdrawIndex).getBalance()) {
-					System.out.println("Overdraft Protection");
-					log.warn("withdraw was greater than current balance.");
-					continue withdrawAmount;
-				}
-				withdrawAmount = Double.valueOf(amount);
-				newWithdrawBalance = targetAccounts.get(withdrawIndex).getBalance() - withdrawAmount;
-				
-				break;
-			} else {
-				log.warn("System input was not numeric or it was not gerater than 0.");
-				System.out.println("the amount entered was not more than $0.00");
-			}
-		}
-		int depositIndex = -1;
-		int accountDepositID = -1;
-		// account to transfer to
-		depositAccount:
-		while(true) {
-		if (targetAccounts.size() > 1) {
-			System.out.println("Which account would you like to deposit into? [account number]");
-			// output all account.
-			for (Account account : targetAccounts) {
-				System.out.println(account.getType() + " Account: " + account.getId());
-			}
-			// take input and check if matches to account ID
-			String depositChoice = tran.nextLine();
-			for (Account a : targetAccounts) {
-				Integer i = a.getId();
-				String j = i.toString();
-				if (choice.equalsIgnoreCase(depositChoice)) {
-					System.out.println("You can't deposit into the same account that your withdrawing from.");
-					continue depositAccount;
-				} else if (j.equalsIgnoreCase(depositChoice)) {
-					accountDepositID = Integer.valueOf(depositChoice);
-					depositIndex = targetAccounts.indexOf(a);
+			Account updatedAccount;
+			Double newWithdrawBalance;
+			withdrawAmount: while (true) {
+				System.out.println("How much would you like to withdraw?");
+				String amount = tran.nextLine();
+				if (Double.valueOf(amount) > 0) {
+					if (Double.valueOf(amount) >= targetAccounts.get(withdrawIndex).getBalance()) {
+						System.out.println("Overdraft Protection");
+						log.warn("withdraw was greater than current balance.");
+						continue withdrawAmount;
+					}
+					withdrawAmount = Double.valueOf(amount);
+					newWithdrawBalance = targetAccounts.get(withdrawIndex).getBalance() - withdrawAmount;
+
 					break;
+				} else {
+					log.warn("System input was not numeric or it was not gerater than 0.");
+					System.out.println("the amount entered was not more than $0.00");
 				}
 			}
-			// if account id doesn't match index with stay negative.
-			if (depositIndex == -1) {
-				System.out.println("Invalid Account ID");
-				continue depositAccount;
+			int depositIndex = -1;
+			int accountDepositID = -1;
+			// account to transfer to
+			depositAccount: while (true) {
+				if (targetAccounts.size() > 1) {
+					System.out.println("Which account would you like to deposit into? [account number]");
+					// output all account.
+					for (Account account : targetAccounts) {
+						System.out.println(account.getType() + " Account: " + account.getId());
+					}
+					// take input and check if matches to account ID
+					String depositChoice = tran.nextLine();
+					for (Account a : targetAccounts) {
+						Integer i = a.getId();
+						String j = i.toString();
+						if (choice.equalsIgnoreCase(depositChoice)) {
+							System.out.println("You can't deposit into the same account that your withdrawing from.");
+							continue depositAccount;
+						} else if (j.equalsIgnoreCase(depositChoice)) {
+							accountDepositID = Integer.valueOf(depositChoice);
+							depositIndex = targetAccounts.indexOf(a);
+							break;
+						}
+					}
+					// if account id doesn't match index with stay negative.
+					if (depositIndex == -1) {
+						System.out.println("Invalid Account ID");
+						continue depositAccount;
+					}
+				}
+				Double newDepositBalance = targetAccounts.get(depositIndex).getBalance() + withdrawAmount;
+				List<Account> updatedTransfer = accountDao.transfer(accountWithdrawID, newWithdrawBalance,
+						accountDepositID, newDepositBalance, userId);
+				return updatedTransfer;
+
 			}
-		}
-		Double newDepositBalance = targetAccounts.get(depositIndex).getBalance()+withdrawAmount;
-		List<Account> updatedTransfer = accountDao.transfer(accountWithdrawID,newWithdrawBalance,accountDepositID,newDepositBalance,userId);
-		return updatedTransfer;
-		
-		}
-		// send to daoimpl
+			// send to daoimpl
 		}
 	}
 
 	public void closeAccount(List<Account> targetAccounts) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public void pendingAccounts() {
+		// pull all pending accounts and change to open.
+		accountDao.pendingAccounts();
+		System.out.println("All Accounts Open");
+	}
+
+	public void specificPendingAccounts() {
+		Scanner uID = new Scanner(System.in);
+		userIdentity: while (true) {
+			System.out.println("What is your UserID?");
+			String userID = uID.nextLine();
+			if (Integer.getInteger(userID) >= 1) {
+				int iD = Integer.getInteger(userID);
+				String valid = accountDao.specificPendingAccounts(iD);
+				if (valid.equalsIgnoreCase("Invalid UserID")) {
+					continue userIdentity;
+				}
+				break;
+			} else {
+				log.warn("Not a valid UserID");
+				System.out.println("Please Enter a Valid UserID");
+				continue userIdentity;
+			}
+		}
 	}
 
 }

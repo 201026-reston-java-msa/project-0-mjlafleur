@@ -34,6 +34,7 @@ public class UserController {
 				break;
 			} else if (targetUser.getRolenum() == 2) {
 				Employee employee = new Employee(targetUser);
+				AccountController.accountEmployee(employee);
 					
 				break;
 			} else if (targetUser.getRolenum() >= 3) {

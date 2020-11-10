@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.revature.model.Account;
+import com.revature.model.Employee;
 import com.revature.model.User;
 import com.revature.service.AccountService;
 import com.revature.util.AccountInfo;
@@ -98,6 +99,31 @@ public class AccountController {
 
 	
 	public static void validateAccounts() {
+		
+	}
+
+	public static void accountEmployee(Employee employee) {
+		Scanner employeeMenu = new Scanner(System.in);
+		while(true) {
+		System.out.println("\nWhat would you like to do in your Accounts today?\n"
+				+ "1 - All Pending Accounts\n"
+				+ "2 - Specific Account\n"
+				+ "3 - User Information\n"
+				+ "Q - \"logout\"");
+		String menu = employeeMenu.nextLine();
+		if(menu.equalsIgnoreCase("1")){
+			accountServ.pendingAccounts();
+		} else if (menu.equalsIgnoreCase("2")) {
+			accountServ.specificPendingAccounts();
+		} else if (menu.equalsIgnoreCase("3")) {
+			//UserInfo
+			
+				//username,userid,accountid
+		}else if (menu.equalsIgnoreCase("q")) {
+			break;
+		}
+	}		
+		
 		
 	}
 	

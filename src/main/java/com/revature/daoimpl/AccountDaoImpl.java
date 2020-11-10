@@ -196,5 +196,46 @@ Account updatedAccount = new Account();
 		
 		return targetAccounts;
 	}
+	@Override
+	public void pendingAccounts() {
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String openAll = "UPDATE accountinformation \r\n" + 
+					"	SET account_status = 'OPEN'\r\n" + 
+					"	WHERE account_status = 'Pending'";
+			PreparedStatement openAccounts = conn.prepareStatement(openAll);
+			openAccounts.executeUpdate();
+			log.info("All Pending accounts now Open.");
+
+		} catch (SQLException e) {
+			log.info("lost communication with database");
+			e.printStackTrace();
+		}
+	}
+	@Override
+	public String specificPendingAccounts(int iD) {
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String iDCheck = "SELECT max(user_id) FROM userinformation;";
+			PreparedStatement userIDCheck = conn.prepareStatement(iDCheck);
+			ResultSet confirmID = userIDCheck.executeQuery();
+			if(confirmID.next())
+				if(confirmID.getInt("user_id")<iD) {
+					return "Invalid UserID";
+				}
+			
+			
+			String open = "UPDATE accountinformation \r\n" + 
+					"	SET account_status = 'OPEN'\r\n" + 
+					"	WHERE account_id = ?";
+			PreparedStatement openAccounts = conn.prepareStatement(open);
+			openAccounts.setInt(1, iD);
+			openAccounts.executeUpdate();
+			log.info("Pending accounts now Open.");
+
+		} catch (SQLException e) {
+			log.info("lost communication with database");
+			e.printStackTrace();
+		}
+		return "All Accounts for UserID: "+iD+ " are open.";
+	}
 
 }

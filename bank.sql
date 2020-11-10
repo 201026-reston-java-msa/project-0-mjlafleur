@@ -121,9 +121,8 @@ WHERE A.user_id=7
 --DEPOSIT
 	UPDATE accountinformation SET account_balance = ? WHERE account_id = ?;
 	
-
 --WITHDRAW
-
+	UPDATE accountinformation SET account_balance = ? WHERE account_id = ?
 
 --TRANSFER
 
@@ -135,6 +134,20 @@ UPDATE accountinformation
 	END 
 	WHERE account_id IN (7,8);
 
+--PENDING TO OPEN (ALL)
+UPDATE accountinformation 
+	SET account_status = 'OPEN'
+	WHERE account_status = 'Pending'
+	
+--PENDING TO OPEN
+UPDATE accountinformation 
+	SET account_status = 'OPEN'
+	FROM UserInformation A  
+INNER JOIN user_account_junction B 
+ON A.user_id  = B.user_fk  
+INNER JOIN AccountInformation C 
+ON C.account_id  = B.account_fk
+WHERE A.user_id=7 AND account_status = 'Pending'
 
 ----------------------QUERIES----------------
 
