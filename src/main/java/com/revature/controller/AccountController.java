@@ -75,8 +75,13 @@ public class AccountController {
 			for (Account a : targetAccounts) {
 				System.out.println(a.toString());
 			}
-			System.out.println("\nWhat would you like to do in your Accounts today?\n" + "1 - Account Deposit\n"
-					+ "2 - Account Withdraw\n" + "3 - Account Transfer\n" + "4 - Open Account\n" + "Q - \"logout\"");
+			System.out.println("\nWhat would you like to do in your Accounts today?\n" 
+			+ "1 - Account Deposit\n"
+			+ "2 - Account Withdraw\n" 
+			+ "3 - Account Transfer\n" 
+			+ "4 - Open Account\n" 
+			+ "Q - \"logout\"");
+			
 			String menu = accountMenu.nextLine();
 			if (menu.equalsIgnoreCase("1")) {
 				accountServ.deposit(targetAccounts);
@@ -138,6 +143,7 @@ public class AccountController {
 		+ "3 - User Information\n"
 		+ "4 - Edit User/Account Information\n"
 		+ "5 - New Employee\n"
+		/*+ "6 - Change RoleID"*/
 		+ "Q - logout");
 			String menu = adminMenu.nextLine();
 			if (menu.equalsIgnoreCase("1")) {
@@ -145,13 +151,13 @@ public class AccountController {
 			} else if (menu.equalsIgnoreCase("2")) {
 				accountServ.specificPendingAccounts();
 			} else if (menu.equalsIgnoreCase("3")) {
-				// UserInfo
 				userServ.userInfo();
-				// username,userid,accountid
 			} else if (menu.equalsIgnoreCase("4")) {
 				userServ.editUserAccount();
 			} else if (menu.equalsIgnoreCase("5")) {
 				UserController.employeeRegister();
+			/*}else if (menu.equalsIgnoreCase("6")) {
+				userServ.editRoleID();*/
 			}else if (menu.equalsIgnoreCase("q")) {
 				break;
 			} 

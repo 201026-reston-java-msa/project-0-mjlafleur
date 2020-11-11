@@ -319,3 +319,75 @@ ionPattern=2020-11-10 22:13:17 INFO  UserDaoImpl:44 - Successful Login
 ionPattern=2020-11-10 22:13:39 INFO  UserDaoImpl:139 - User was created in database
 2020-11-10 22:13:51 INFO  UserDaoImpl:44 - Successful Login
 ionPattern=2020-11-10 22:13:51 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 07:31:17 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-11 07:31:17 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-11 07:31:17 WARN  UserController:47 - Failed login attempt
+ionPattern=2020-11-11 07:31:17 WARN  UserController:47 - Failed login attempt
+2020-11-11 07:31:51 INFO  UserDaoImpl:92 - User was created in database
+ionPattern=2020-11-11 07:31:51 INFO  UserDaoImpl:92 - User was created in database
+2020-11-11 07:32:07 INFO  AccountDaoImpl:49 - Account creation and user connection successful
+ionPattern=2020-11-11 07:32:07 INFO  AccountDaoImpl:49 - Account creation and user connection successful
+2020-11-11 07:32:07 INFO  AccountDaoImpl:49 - Account creation and user connection successful
+ionPattern=2020-11-11 07:32:07 INFO  AccountDaoImpl:49 - Account creation and user connection successful
+2020-11-11 07:32:30 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 07:32:30 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 07:34:03 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-11 07:34:03 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-11 07:34:03 WARN  UserController:47 - Failed login attempt
+ionPattern=2020-11-11 07:34:03 WARN  UserController:47 - Failed login attempt
+2020-11-11 07:34:31 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-11 07:34:31 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-11 07:34:31 WARN  UserController:47 - Failed login attempt
+ionPattern=2020-11-11 07:34:31 WARN  UserController:47 - Failed login attempt
+2020-11-11 07:34:46 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 07:34:46 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 07:35:01 INFO  AccountDaoImpl:239 - Pending accounts now Open.
+ionPattern=2020-11-11 07:35:01 INFO  AccountDaoImpl:239 - Pending accounts now Open.
+2020-11-11 07:35:54 INFO  AccountDaoImpl:235 - No Pending Accounts
+ionPattern=2020-11-11 07:35:54 INFO  AccountDaoImpl:235 - No Pending Accounts
+2020-11-11 07:36:18 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 07:36:18 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 07:36:40 INFO  UserService:129 - FirstName updated for userID: 22 to first89
+ionPattern=2020-11-11 07:36:40 INFO  UserService:129 - FirstName updated for userID: 22 to first89
+2020-11-11 07:37:16 INFO  UserDaoImpl:139 - User was created in database
+ionPattern=2020-11-11 07:37:16 INFO  UserDaoImpl:139 - User was created in database
+2020-11-11 07:37:29 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 07:37:29 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 07:37:43 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 07:37:43 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 09:06:12 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 09:06:12 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 09:06:31 INFO  AccountDaoImpl:49 - Account creation and user connection successful
+ionPattern=2020-11-11 09:06:31 INFO  AccountDaoImpl:49 - Account creation and user connection successful
+2020-11-11 09:06:47 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 09:06:47 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 09:07:04 WARN  AccountService:195 - withdraw was greater than current balance.
+ionPattern=2020-11-11 09:07:04 WARN  AccountService:195 - withdraw was greater than current balance.
+2020-11-11 09:08:13 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-11 09:08:13 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-11 09:08:13 WARN  UserController:47 - Failed login attempt
+ionPattern=2020-11-11 09:08:13 WARN  UserController:47 - Failed login attempt
+2020-11-11 09:09:39 INFO  UserDaoImpl:92 - User was created in database
+ionPattern=2020-11-11 09:09:39 INFO  UserDaoImpl:92 - User was created in database
+2020-11-11 09:09:46 INFO  AccountDaoImpl:49 - Account creation and user connection successful
+ionPattern=2020-11-11 09:09:46 INFO  AccountDaoImpl:49 - Account creation and user connection successful
+2020-11-11 09:09:46 INFO  AccountDaoImpl:49 - Account creation and user connection successful
+ionPattern=2020-11-11 09:09:46 INFO  AccountDaoImpl:49 - Account creation and user connection successful
+2020-11-11 09:10:03 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 09:10:03 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 09:10:14 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 09:10:14 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 09:10:24 INFO  AccountDaoImpl:239 - Pending accounts now Open.
+ionPattern=2020-11-11 09:10:24 INFO  AccountDaoImpl:239 - Pending accounts now Open.
+2020-11-11 09:10:32 INFO  AccountDaoImpl:207 - All Pending accounts now Open.
+ionPattern=2020-11-11 09:10:32 INFO  AccountDaoImpl:207 - All Pending accounts now Open.
+2020-11-11 09:10:44 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 09:10:44 INFO  UserDaoImpl:44 - Successful Login
+2020-11-11 09:11:11 INFO  UserService:129 - FirstName updated for userID: 24 to first890
+ionPattern=2020-11-11 09:11:11 INFO  UserService:129 - FirstName updated for userID: 24 to first890
+2020-11-11 09:11:24 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-11 09:11:24 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-11 09:11:24 WARN  UserController:47 - Failed login attempt
+ionPattern=2020-11-11 09:11:24 WARN  UserController:47 - Failed login attempt
+2020-11-11 09:11:33 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-11 09:11:33 INFO  UserDaoImpl:44 - Successful Login

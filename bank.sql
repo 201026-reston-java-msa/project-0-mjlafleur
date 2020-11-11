@@ -158,7 +158,14 @@ UPDATE accountinformation A
 SET account_status = 'OPEN'
 FROM user_account_junction uaj
 WHERE uaj.account_fk = A.account_id 
-AND uaj.user_fk =12 AND A.account_status ='Pending';
+AND uaj.user_fk =? AND A.account_status ='Pending';
+
+	-----UserInfo Edit----
+	
+--UserName
+UPDATE userinformation 
+SET user_name = ?
+WHERE user_id = ?
 
 ----------------------QUERIES----------------
 
@@ -167,6 +174,8 @@ FROM UserInformation A
 WHERE A.user_name='user' AND A.pass_word ='pass';
 
 SELECT user_id FROM userinformation WHERE user_name = 'ASeaholm';
+
+SELECT * FROM userinformation WHERE user_id = 7;
 
 SELECT max(user_id) FROM userinformation;
 SELECT max(account_id) FROM accountinformation;

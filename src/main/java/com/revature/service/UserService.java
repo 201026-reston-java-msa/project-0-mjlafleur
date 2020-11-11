@@ -140,6 +140,17 @@ public class UserService {
 		log.info("LastName updated for userID: " +userEdit.getId()+" to "+ userEdit.getLastName());
 	}
 
+//	public void editRoleID() {
+//		Scanner editLastName = new Scanner(System.in);
+//		System.out.println("Please Enter the new RoleID Number");
+//		String newUserLast = editLastName.nextLine();
+//		
+//		User userEdit = userDao.editLastname(newUserLast, userId);
+//		System.out.println("LastName updated on logout");
+//		log.info("LastName updated for userID: " +userEdit.getId()+" to "+ userEdit.getLastName());
+//	}
+	
+
 	
 
 
