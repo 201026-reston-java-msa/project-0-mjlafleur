@@ -34,7 +34,7 @@ public class UserController {
 				AccountController.accountAdmin(admin);
 				break;
 			} else if (targetUser.getRolenum() == 2) {
-				Employee employee =  (Employee) targetUser;
+				Employee employee =  new Employee(targetUser);
 				AccountController.accountEmployee(employee);
 					
 				break;
@@ -112,6 +112,33 @@ public class UserController {
 				Admin admin = new Admin(targetUser);
 				AccountController.accountAdmin(admin);
 				break;
+			} else {
+				break;
+			}
+			
+		}
+	}
+
+	public static void employeeRegister() {
+		Scanner registerScan = new Scanner(System.in);
+		System.out.println("Brutal Bank will need some information from you.\n" + "Employee Username:");
+		String userName = registerScan.nextLine();
+		System.out.println("Password");
+		String passWord = registerScan.nextLine();
+
+		System.out.println("First Name");
+		String firstName = registerScan.nextLine();
+		System.out.println("Last Name");
+		String lastName = registerScan.nextLine();
+
+		User newUser = userServ.registerEmployee(userName, passWord, firstName, lastName);
+
+//check if the username is valid
+		while(true) {
+			if (newUser.getRolenum() == 0) {
+			System.out.println("The username is invalid\n" + "Please enter a new username.");
+			userName = registerScan.nextLine();
+			newUser = userServ.registerEmployee(userName, passWord, firstName, lastName);
 			} else {
 				break;
 			}

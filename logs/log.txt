@@ -265,3 +265,57 @@ ionPattern=2020-11-10 16:22:44 WARN  UserController:46 - Failed login attempt
 ionPattern=2020-11-10 16:33:54 WARN  UserDaoImpl:45 - Invalid Credentials
 2020-11-10 16:33:54 WARN  UserController:46 - Failed login attempt
 ionPattern=2020-11-10 16:33:54 WARN  UserController:46 - Failed login attempt
+2020-11-10 19:38:42 WARN  UserDaoImpl:45 - Invalid Credentials
+ionPattern=2020-11-10 19:38:42 WARN  UserDaoImpl:45 - Invalid Credentials
+2020-11-10 19:38:42 WARN  UserController:47 - Failed login attempt
+ionPattern=2020-11-10 19:38:42 WARN  UserController:47 - Failed login attempt
+2020-11-10 19:39:44 WARN  UserDaoImpl:45 - Invalid Credentials
+ionPattern=2020-11-10 19:39:44 WARN  UserDaoImpl:45 - Invalid Credentials
+2020-11-10 19:39:44 WARN  UserController:47 - Failed login attempt
+ionPattern=2020-11-10 19:39:44 WARN  UserController:47 - Failed login attempt
+2020-11-10 20:34:58 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 20:34:58 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 20:35:03 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 20:35:03 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 20:35:17 INFO  UserService:115 - Password updated for userID: 7 to pass7
+ionPattern=2020-11-10 20:35:17 INFO  UserService:115 - Password updated for userID: 7 to pass7
+2020-11-10 21:51:02 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-10 21:51:02 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-10 21:51:02 WARN  UserController:47 - Failed login attempt
+ionPattern=2020-11-10 21:51:02 WARN  UserController:47 - Failed login attempt
+2020-11-10 21:51:07 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 21:51:07 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 21:52:47 INFO  AccountService:383 - Account Balance updated for accountID: 7
+ionPattern=2020-11-10 21:52:47 INFO  AccountService:383 - Account Balance updated for accountID: 7
+2020-11-10 21:53:15 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 21:53:15 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 21:56:35 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 21:56:35 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 21:57:52 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 21:57:52 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 22:02:24 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 22:02:24 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 22:03:51 INFO  AccountService:376 - Account Type updated for accountID: 7
+ionPattern=2020-11-10 22:03:51 INFO  AccountService:376 - Account Type updated for accountID: 7
+2020-11-10 22:03:57 INFO  AccountService:350 - Account Status updated for accountID: 7
+ionPattern=2020-11-10 22:03:57 INFO  AccountService:350 - Account Status updated for accountID: 7
+2020-11-10 22:04:28 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 22:04:28 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 22:04:41 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 22:04:41 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 22:04:51 INFO  AccountDaoImpl:239 - Pending accounts now Open.
+ionPattern=2020-11-10 22:04:51 INFO  AccountDaoImpl:239 - Pending accounts now Open.
+2020-11-10 22:04:55 INFO  AccountDaoImpl:207 - All Pending accounts now Open.
+ionPattern=2020-11-10 22:04:55 INFO  AccountDaoImpl:207 - All Pending accounts now Open.
+2020-11-10 22:05:03 WARN  UserDaoImpl:46 - Invalid Credentials
+ionPattern=2020-11-10 22:05:03 WARN  UserDaoImpl:46 - Invalid Credentials
+2020-11-10 22:05:03 WARN  UserController:47 - Failed login attempt
+ionPattern=2020-11-10 22:05:03 WARN  UserController:47 - Failed login attempt
+2020-11-10 22:05:07 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 22:05:07 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 22:13:17 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 22:13:17 INFO  UserDaoImpl:44 - Successful Login
+2020-11-10 22:13:39 INFO  UserDaoImpl:139 - User was created in database
+ionPattern=2020-11-10 22:13:39 INFO  UserDaoImpl:139 - User was created in database
+2020-11-10 22:13:51 INFO  UserDaoImpl:44 - Successful Login
+ionPattern=2020-11-10 22:13:51 INFO  UserDaoImpl:44 - Successful Login

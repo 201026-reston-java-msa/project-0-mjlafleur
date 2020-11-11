@@ -7,7 +7,7 @@ public class Admin extends Employee{
 	}
 
 	public Admin(User targetUser) {
-		// TODO Auto-generated constructor stub
+		super(targetUser);
 	}
 	
 

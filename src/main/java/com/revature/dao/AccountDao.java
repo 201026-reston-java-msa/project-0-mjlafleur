@@ -3,6 +3,7 @@ package com.revature.dao;
 import java.util.List;
 
 import com.revature.model.Account;
+import com.revature.model.User;
 
 public interface AccountDao {
 
@@ -19,6 +20,14 @@ public interface AccountDao {
 	void pendingAccounts();
 
 	String specificPendingAccounts(int iD);
+
+	
+	//////ADMIN ACCOUNT EDIT//////
+	Account editStatus(String newStatus, int accountID);
+
+	Account editType(String newType, int accountID);
+
+	Account editBalance(double newAccountBalance, int accountID);
 
 
 }

@@ -140,7 +140,7 @@ Account updatedAccount = new Account();
 			
 		} catch (SQLException e) {
 			log.warn("An error with the database has occured.");
-			e.printStackTrace();
+			
 		}
 		
 		
@@ -243,6 +243,85 @@ Account updatedAccount = new Account();
 			e.printStackTrace();
 		}
 		return "All Accounts for UserID: "+iD+ " are open.";
+	}
+	
+	@Override
+	public Account editStatus(String newStatus, int accountID) {
+		Account editAccount = new Account();
+
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String updateStatus = "UPDATE accountinformation SET account_status = ? WHERE account_id = ?;";
+			PreparedStatement setStatus = conn.prepareStatement(updateStatus);
+			setStatus.setString(1, newStatus);
+			setStatus.setInt(2,accountID);
+			setStatus.executeUpdate();
+			
+			String getAccount = "SELECT * FROM accountinformation WHERE account_id = ?";
+			PreparedStatement pullAccount = conn.prepareStatement(getAccount);
+			pullAccount.setInt(1, accountID);
+			
+			ResultSet getAccountinfo = pullAccount.executeQuery();
+			while(getAccountinfo.next()) {
+				editAccount = new Account(getAccountinfo.getInt("account_id"), getAccountinfo.getString("account_type"),getAccountinfo.getDouble("account_balance"),
+						getAccountinfo.getString("account_status"));
+			}
+			} catch (SQLException sqle) {
+				log.warn("An error with the database has occured.");
+		
+			}
+		return editAccount;
+	}
+	@Override
+	public Account editType(String newType, int accountID) {
+		Account editAccount = new Account();
+
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String updateType = "UPDATE accountinformation SET account_type = ? WHERE account_id = ?;";
+			PreparedStatement setType = conn.prepareStatement(updateType);
+			setType.setString(1, newType);
+			setType.setInt(2,accountID);
+			setType.executeUpdate();
+			
+			String getAccount = "SELECT * FROM accountinformation WHERE account_id = ?";
+			PreparedStatement pullAccount = conn.prepareStatement(getAccount);
+			pullAccount.setInt(1, accountID);
+			
+			ResultSet getAccountinfo = pullAccount.executeQuery();
+			while(getAccountinfo.next()) {
+				editAccount = new Account(getAccountinfo.getInt("account_id"), getAccountinfo.getString("account_type"),getAccountinfo.getDouble("account_balance"),
+						getAccountinfo.getString("account_status"));
+			}
+			} catch (SQLException sqle) {
+				log.warn("An error with the database has occured.");
+		
+			}
+		return editAccount;
+	}
+	@Override
+	public Account editBalance(double newAccountBalance, int accountID) {
+		Account editAccount = new Account();
+
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String updateBalance = "UPDATE accountinformation SET account_balance = ? WHERE account_id = ?;";
+			PreparedStatement setType = conn.prepareStatement(updateBalance);
+			setType.setDouble(1, newAccountBalance);
+			setType.setInt(2,accountID);
+			setType.executeUpdate();
+			
+			String getAccount = "SELECT * FROM accountinformation WHERE account_id = ?";
+			PreparedStatement pullAccount = conn.prepareStatement(getAccount);
+			pullAccount.setInt(1, accountID);
+			
+			ResultSet getAccountinfo = pullAccount.executeQuery();
+			while(getAccountinfo.next()) {
+				editAccount = new Account(getAccountinfo.getInt("account_id"), getAccountinfo.getString("account_type"),getAccountinfo.getDouble("account_balance"),
+						getAccountinfo.getString("account_status"));
+			}
+			} catch (SQLException sqle) {
+				log.warn("An error with the database has occured.");
+		
+			}
+		return editAccount;
 	}
 
 }

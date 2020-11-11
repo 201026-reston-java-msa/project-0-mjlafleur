@@ -137,6 +137,7 @@ public class AccountController {
 		+ "2 - Specific Account\n" 
 		+ "3 - User Information\n"
 		+ "4 - Edit User/Account Information\n"
+		+ "5 - New Employee\n"
 		+ "Q - logout");
 			String menu = adminMenu.nextLine();
 			if (menu.equalsIgnoreCase("1")) {
@@ -149,8 +150,9 @@ public class AccountController {
 				// username,userid,accountid
 			} else if (menu.equalsIgnoreCase("4")) {
 				userServ.editUserAccount();
-				break;
-			} else if (menu.equalsIgnoreCase("q")) {
+			} else if (menu.equalsIgnoreCase("5")) {
+				UserController.employeeRegister();
+			}else if (menu.equalsIgnoreCase("q")) {
 				break;
 			} 
 		}

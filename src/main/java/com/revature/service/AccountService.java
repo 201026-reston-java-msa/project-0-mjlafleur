@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import com.revature.dao.AccountDao;
 import com.revature.daoimpl.AccountDaoImpl;
 import com.revature.model.Account;
+import com.revature.model.User;
 
 public class AccountService {
 	Logger log = Logger.getLogger(AccountService.class);
@@ -287,9 +288,104 @@ public class AccountService {
 
 	}
 
-	public void editAccount() {
-		// TODO Auto-generated method stub
+	public void editAccount(int userId) {
+		List<Account> Accounts =  getAccount(userId);
+		for(Account a:Accounts) {
+			System.out.println(a.toString());
+		}
+		Scanner accountChoice = new Scanner(System.in);
+		System.out.println("Which account needs to be adjusted?");
+		String accountId = accountChoice.nextLine();
+		int accountID = Integer.valueOf(accountId);
 		
+		while (true) {
+			System.out.println("What needs to be adjusted in this account?\n" 
+					+ "1 - Account Balance\n"
+					+ "2 - Account Type\n" 
+					+ "3 - Account Status\n" 
+					+ "Q - Back");
+			String menu = accountChoice.nextLine();
+			if (menu.equalsIgnoreCase("1")) {
+				editBalance(accountID);
+			} else if (menu.equalsIgnoreCase("2")) {
+				editType(accountID);
+			} else if (menu.equalsIgnoreCase("3")) {
+				editStatus(accountID);
+			} else if (menu.equalsIgnoreCase("q")) {
+				break;
+			}
+		}
+
+	}
+
+	private void editStatus(int accountID) {
+		Scanner editStatus = new Scanner(System.in);
+		while (true) {
+			System.out.println("What is the new status of the Account?\n" 
+					+ "1 - OPEN\n"
+					+ "2 - CLOSED\n" 
+					+ "3 - Pending\n" 
+					+ "4 - Denied\n"
+					+ "Q - Back");
+			String newStatus = editStatus.nextLine();
+			if (newStatus.equalsIgnoreCase("1")) {
+				newStatus = "OPEN";
+				
+			} else if (newStatus.equalsIgnoreCase("2")) {
+				newStatus = "CLOSED";
+				
+			} else if (newStatus.equalsIgnoreCase("3")) {
+				newStatus = "Pending";
+				
+			} else if (newStatus.equalsIgnoreCase("4")) {
+				newStatus = "Denied";
+				
+			} else if (newStatus.equalsIgnoreCase("q")) {
+				break;
+			}
+		
+		Account editAccount = accountDao.editStatus(newStatus, accountID);
+		System.out.println("Account Status updated on logout");
+		log.info("Account Status updated for accountID: " + editAccount.getId());
+		break;
+		}
+	}
+
+	private void editType(int accountID) {
+		Scanner editType = new Scanner(System.in);
+		while (true) {
+			System.out.println("What is the new Type of Account?\n" 
+					+ "1 - Savings\n"
+					+ "2 - Checking\n" 
+					+ "Q - Back");
+			String newType = editType.nextLine();
+			if (newType.equalsIgnoreCase("1")) {
+				newType = "Saving";
+				
+			} else if (newType.equalsIgnoreCase("2")) {
+				newType = "Checking";
+				
+			} else if (newType.equalsIgnoreCase("q")) {
+				break;
+			}
+
+		
+		Account editAccount = accountDao.editType(newType, accountID);
+		System.out.println("Account Type updated on logout");
+		log.info("Account Type updated for accountID: " + editAccount.getId());
+		break;
+		}		
+	}
+
+	private void editBalance(int accountID) {
+		Scanner editBalance = new Scanner(System.in);
+		System.out.println("What is the correct balance of the Account?");
+		String newBalance = editBalance.nextLine();
+		double newAccountBalance = Double.valueOf(newBalance);
+		Account editAccount = accountDao.editBalance(newAccountBalance,accountID);
+		System.out.println("Account Balance updated on logout");
+		log.info("Account Balance updated for accountID: " + editAccount.getId());
+
 	}
 
 }
