@@ -240,3 +240,28 @@ ionPattern=2020-11-09 10:32:25 WARN  AccountDaoImpl:108 - An error with the data
 ionPattern=2020-11-09 10:43:34 WARN  AccountDaoImpl:113 - An error with the database has occured.
 2020-11-09 10:58:54 WARN  AccountService:130 - withdraw was greater than balance.
 ionPattern=2020-11-09 10:58:54 WARN  AccountService:130 - withdraw was greater than balance.
+2020-11-10 16:09:23 WARN  AccountService:282 - The input was not an integer
+ionPattern=2020-11-10 16:09:23 WARN  AccountService:282 - The input was not an integer
+java.lang.NumberFormatException: For input string: "aspp"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.valueOf(Unknown Source)
+	at com.revature.service.AccountService.specificPendingAccounts(AccountService.java:264)
+	at com.revature.controller.AccountController.accountEmployee(AccountController.java:119)
+	at com.revature.controller.UserController.login(UserController.java:37)
+	at com.revature.util.Welcome.welcome(Welcome.java:22)
+	at com.revature.Driver.main(Driver.java:17)
+2020-11-10 16:21:10 WARN  AccountService:282 - The input was not an integer
+ionPattern=2020-11-10 16:21:10 WARN  AccountService:282 - The input was not an integer
+2020-11-10 16:22:37 WARN  UserDaoImpl:45 - Invalid Credentials
+ionPattern=2020-11-10 16:22:37 WARN  UserDaoImpl:45 - Invalid Credentials
+2020-11-10 16:22:37 WARN  UserController:46 - Failed login attempt
+ionPattern=2020-11-10 16:22:37 WARN  UserController:46 - Failed login attempt
+2020-11-10 16:22:44 WARN  UserDaoImpl:45 - Invalid Credentials
+ionPattern=2020-11-10 16:22:44 WARN  UserDaoImpl:45 - Invalid Credentials
+2020-11-10 16:22:44 WARN  UserController:46 - Failed login attempt
+ionPattern=2020-11-10 16:22:44 WARN  UserController:46 - Failed login attempt
+2020-11-10 16:33:54 WARN  UserDaoImpl:45 - Invalid Credentials
+ionPattern=2020-11-10 16:33:54 WARN  UserDaoImpl:45 - Invalid Credentials
+2020-11-10 16:33:54 WARN  UserController:46 - Failed login attempt
+ionPattern=2020-11-10 16:33:54 WARN  UserController:46 - Failed login attempt

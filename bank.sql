@@ -113,8 +113,21 @@ INNER JOIN user_account_junction B
 ON A.user_id  = B.user_fk  
 INNER JOIN AccountInformation C 
 ON C.account_id  = B.account_fk
-WHERE A.user_id=7
+WHERE A.user_id=7;
+---------ACCOUNT ID FROM USER ID--------------------
+SELECT c.account_id
+FROM UserInformation A  
+INNER JOIN user_account_junction B 
+ON A.user_id  = B.user_fk  
+INNER JOIN AccountInformation C 
+ON C.account_id  = B.account_fk
+WHERE A.user_id=7;
 
+SELECT ai.account_id
+FROM user_account_junction uaj  
+INNER JOIN AccountInformation ai 
+ON ai.account_id  = uaj.account_fk
+WHERE uaj.user_fk =1;
 
 
 ---------------------UPDATES------------------
@@ -137,17 +150,15 @@ UPDATE accountinformation
 --PENDING TO OPEN (ALL)
 UPDATE accountinformation 
 	SET account_status = 'OPEN'
-	WHERE account_status = 'Pending'
+	WHERE account_status = 'Pending';
 	
 --PENDING TO OPEN
-UPDATE accountinformation 
-	SET account_status = 'OPEN'
-	FROM UserInformation A  
-INNER JOIN user_account_junction B 
-ON A.user_id  = B.user_fk  
-INNER JOIN AccountInformation C 
-ON C.account_id  = B.account_fk
-WHERE A.user_id=7 AND account_status = 'Pending'
+
+UPDATE accountinformation A
+SET account_status = 'OPEN'
+FROM user_account_junction uaj
+WHERE uaj.account_fk = A.account_id 
+AND uaj.user_fk =12 AND A.account_status ='Pending';
 
 ----------------------QUERIES----------------
 

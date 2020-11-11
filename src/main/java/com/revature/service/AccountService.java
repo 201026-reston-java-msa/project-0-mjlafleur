@@ -11,13 +11,13 @@ import com.revature.model.Account;
 
 public class AccountService {
 	Logger log = Logger.getLogger(AccountService.class);
-	AccountDao accountDao = new AccountDaoImpl();
+	static AccountDao accountDao = new AccountDaoImpl();
 
 	public Account openAccount(int id, String type, double balance) {
 		return accountDao.openAccount(id, type, balance);
 	}
 
-	public List<Account> getAccount(int id) {
+	public static List<Account> getAccount(int id) {
 		return accountDao.getAccount(id);
 	}
 
@@ -257,21 +257,39 @@ public class AccountService {
 	public void specificPendingAccounts() {
 		Scanner uID = new Scanner(System.in);
 		userIdentity: while (true) {
+			String valid = "Invalid UserID";
 			System.out.println("What is your UserID?");
 			String userID = uID.nextLine();
-			if (Integer.getInteger(userID) >= 1) {
-				int iD = Integer.getInteger(userID);
-				String valid = accountDao.specificPendingAccounts(iD);
-				if (valid.equalsIgnoreCase("Invalid UserID")) {
+			try {
+				if (Integer.valueOf(userID) >= 1) {
+					int iD = Integer.valueOf(userID);
+					valid = accountDao.specificPendingAccounts(iD);
+
+					if (valid.equalsIgnoreCase("Invalid UserID")) {
+						System.out.println("Invalid UserID");
+						continue userIdentity;
+					}
+					System.out.println(valid);
+					break;
+				} else {
+
+					log.warn("Not a valid UserID");
+					System.out.println("Please Enter a Valid UserID");
 					continue userIdentity;
 				}
-				break;
-			} else {
-				log.warn("Not a valid UserID");
-				System.out.println("Please Enter a Valid UserID");
+			} catch (NumberFormatException nfe) {
+				System.out.println("Invalid UserID");
+				log.warn("The input was not an integer");
 				continue userIdentity;
 			}
+
 		}
+
+	}
+
+	public void editAccount() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -214,23 +214,30 @@ Account updatedAccount = new Account();
 	@Override
 	public String specificPendingAccounts(int iD) {
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			String iDCheck = "SELECT max(user_id) FROM userinformation;";
+			String iDCheck = "SELECT max(user_id) FROM userinformation";
 			PreparedStatement userIDCheck = conn.prepareStatement(iDCheck);
 			ResultSet confirmID = userIDCheck.executeQuery();
-			if(confirmID.next())
-				if(confirmID.getInt("user_id")<iD) {
+			if(confirmID.next()) {
+				if(confirmID.getInt("max")<iD) {
 					return "Invalid UserID";
 				}
+			}
 			
-			
-			String open = "UPDATE accountinformation \r\n" + 
-					"	SET account_status = 'OPEN'\r\n" + 
-					"	WHERE account_id = ?";
+			String open = "UPDATE accountinformation A\r\n" + 
+					"SET account_status = 'OPEN'\r\n" + 
+					"FROM user_account_junction uaj\r\n" + 
+					"WHERE uaj.account_fk = A.account_id \r\n" + 
+					"AND uaj.user_fk =? AND A.account_status ='Pending';";
 			PreparedStatement openAccounts = conn.prepareStatement(open);
 			openAccounts.setInt(1, iD);
-			openAccounts.executeUpdate();
+			int validate = openAccounts.executeUpdate();
+			if (validate == 0) {
+				log.info("No Pending Accounts");
+				return "No Pending Accounts";
+			}
+			else {
 			log.info("Pending accounts now Open.");
-
+			}
 		} catch (SQLException e) {
 			log.info("lost communication with database");
 			e.printStackTrace();

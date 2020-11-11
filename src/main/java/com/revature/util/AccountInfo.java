@@ -5,26 +5,22 @@ import com.revature.model.User;
 import java.util.List;
 
 import com.revature.model.Account;
+import com.revature.model.Admin;
+import com.revature.model.Employee;
 
 public class AccountInfo {
 	
-	public static void accountInfo(User targetUser, List<Account> targetAccounts) {
-		
-		if(targetUser.getRolenum()>=3) {
-	System.out.println("Welcome "+targetUser.getFirstName()+" "+targetUser.getLastName()+"\n"
-			+"Current accounts:");
-			
-		} else if (targetUser.getRolenum()==2) {
-			System.out.println("Welcome "+ targetUser.getFirstName()+" "+targetUser.getLastName()+"\n");
-			
-		} else if (targetUser.getRolenum()==1) {
-			System.out.println("Welcome "+ targetUser.getFirstName()+" "+targetUser.getLastName()+"\n");
-		}
-			
-	
-	
-	
-	
+	public static void accountInfo(User targetUser) {	
+	System.out.println("Welcome "+targetUser.getFirstName()+" "+targetUser.getLastName()+"\n");
 	}
-
+	
+	public static void accountInfo(Employee employee) {	
+		System.out.println("Welcome "+   employee.getFirstName() +" "+ employee.getLastName()+"\n"
+				+"Employee ID: " + employee.getId());	
+		}
+	
+	public static void accountInfo(Admin admin) {	
+		System.out.println("Welcome "+admin.getFirstName() +" "+ admin.getLastName()+"\n"
+				+"Admin: " + admin.getId());		
+		}
 }

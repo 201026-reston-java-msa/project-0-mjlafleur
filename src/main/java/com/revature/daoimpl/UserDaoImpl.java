@@ -115,6 +115,56 @@ public class UserDaoImpl implements UserDao{
 			
 		return newUser;
 	}
+
+
+	@Override
+	public User specificUser(int iD) {
+		User targetUser = new User();
+		try (Connection conn = ConnectionUtil.getConnection()) {
+		String getUser ="SELECT * FROM userinformation WHERE user_id = ?";
+		PreparedStatement pullUser = conn.prepareStatement(getUser);
+		pullUser.setInt(1, iD);
+		
+		ResultSet postUser = pullUser.executeQuery();
+		if(postUser.next()) {
+			targetUser = new User(postUser.getInt("user_id"),postUser.getString("user_name"),""/*this is the password*/, 
+								postUser.getString("first_name"), postUser.getString("last_name"), postUser.getInt("rolenum"));
+		}
+		
+		}  catch (SQLException sqle){
+			sqle.printStackTrace();
+		}
+		
+		return targetUser;
+	}
+
+
+	@Override
+	public User editUsername(String newUserName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public User editPassword(String newUserPass) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public User editFirstname(String newUserFirst) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public User editLastname(String newUserLast) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
 

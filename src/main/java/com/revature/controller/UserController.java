@@ -31,9 +31,10 @@ public class UserController {
 			///////////////// return valid user from login. Go to Account.
 			if (targetUser.getRolenum() == 1) {
 				Admin admin = new Admin(targetUser);
+				AccountController.accountAdmin(admin);
 				break;
 			} else if (targetUser.getRolenum() == 2) {
-				Employee employee = new Employee(targetUser);
+				Employee employee =  (Employee) targetUser;
 				AccountController.accountEmployee(employee);
 					
 				break;
@@ -97,6 +98,25 @@ public class UserController {
 
 	public static int counter() {
 		return count += 1;
+	}
+
+	public static void adminLogin() {
+		Scanner adminLoginScan = new Scanner(System.in);
+		while (true) {
+			String userName = adminLoginScan.nextLine();
+			String passWord = adminLoginScan.nextLine();
+			User targetUser = userServ.login(userName, passWord);
+
+			///////////////// return valid user from login. Go to Account.
+			if (targetUser.getRolenum() == 1) {
+				Admin admin = new Admin(targetUser);
+				AccountController.accountAdmin(admin);
+				break;
+			} else {
+				break;
+			}
+			
+		}
 	}
 
 }
